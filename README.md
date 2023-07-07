@@ -17,7 +17,7 @@ This is a project to create a quiz using JavaScript
 
 This project was assigned to me to create a quiz with questions based around JavaScript. This was used to help develop my JavaScript skills and build my knowledge through flashcards. 
 
-[Visit the Deployed Site](https://https://mattschneble.github.io/javascript-quiz-project/)
+[Visit the Deployed Site](https://mattschneble.github.io/javascript-quiz-project/)
 
 ## Usage 
 
