@@ -96,3 +96,33 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+
+// Determining if you got the correct answer
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
+        } else {
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+        }
+
+    }
+    // Determining what number question user is on
+    questionIndex++;
+
+    if (questionIndex >= questions.length) {
+        allDone();
+        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+    } else {
+        render(questionIndex);
+    }
+    questionsDiv.appendChild(createDiv);
+
+}
