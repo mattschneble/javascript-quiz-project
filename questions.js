@@ -61,3 +61,38 @@ var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
+// Triggers timer on button, shows user a display on the screen
+timer.addEventListener("click", function () {
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            currentTime.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textContent = "Time's up!";
+            }
+        }, 1000);
+    }
+    render(questionIndex);
+});
+
+// Renders questions and choices to page: 
+function render(questionIndex) {
+    questionsDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
+    // For loops to loop through all info in array generating questions and answers
+    for (var i = 0; i < questions.length; i++) {
+        var userQuestion = questions[questionIndex].title;
+        var userChoices = questions[questionIndex].choices;
+        questionsDiv.textContent = userQuestion;
+    }
+    userChoices.forEach(function (newItem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = newItem;
+        questionsDiv.appendChild(ulCreate);
+        ulCreate.appendChild(listItem);
+        listItem.addEventListener("click", (compare));
+    })
+}
