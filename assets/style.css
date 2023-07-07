@@ -95,7 +95,7 @@
             color: white;
         }
         
-        a, p {
+        a, p, ul, div {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             color: darkslateblue;
         }
@@ -103,6 +103,8 @@
         #createDiv {
             margin-top: 20px;
             border-top: 1px solid lightgray;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: darkslateblue;
         }
 
         /* Start media queries */
